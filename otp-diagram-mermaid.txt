@@ -1,0 +1,66 @@
+graph TD
+    FE[Front End]
+    EN[Envoy]
+    AA[Authentication and Authorization Service]
+    CC[Client Configuration Service]
+    SD[Static Data Service]
+    PG[(Postgres)]
+    QA[Quote Aggregator]
+    MD[Market Data Service]
+    IEX[IEX Market Data Gateway]
+    XNAS[XNAS Market Data Gateway]
+    SR[Smart Router]
+    VWAP[VWAP Strategy]
+    OR[Order Router]
+    OD[Order Data Service]
+    KF[(Kafka)]
+    IEXE[IEX Execution Venue]
+    XNASE[XNAS Execution Venue]
+    IEXS[IEX Market Simulator]
+    XNASS[XNAS Market Simulator]
+
+    FE -->|http| EN
+    EN -->|gRPC| AA
+    EN -->|gRPC| CC
+    EN -->|gRPC| SD
+    EN -->|gRPC| QA
+    EN -->|gRPC| MD
+    EN -->|gRPC| OR
+    SD --- PG
+    MD --> IEX
+    MD --> XNAS
+    SR --> MD
+    VWAP --> MD
+    OR --> IEXE
+    OR --> XNASE
+    OR --> OD
+    OD --- KF
+    IEX --> IEXS
+    XNAS --> XNASS
+
+    subgraph Gears Trading Platform
+        EN
+        AA
+        CC
+        SD
+        QA
+        MD
+        IEX
+        XNAS
+        SR
+        VWAP
+        OR
+        OD
+        IEXE
+        XNASE
+    end
+
+    classDef golang fill:#000,stroke:#333,stroke-width:2px;
+    classDef java fill:#000,stroke:#333,stroke-width:2px;
+    classDef typescript fill:#000,stroke:#333,stroke-width:2px;
+    classDef external fill:#000,stroke:#333,stroke-width:2px;
+
+    class FE typescript;
+    class EN java;
+    class AA,CC,SD,QA,MD,IEX,XNAS,SR,VWAP,OR,OD,IEXE,XNASE golang;
+    class IEXS,XNASS external;

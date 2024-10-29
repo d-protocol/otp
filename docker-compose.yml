@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  ubuntu-server:
+    container_name: ubuntu-server
+    image: ubuntu:22.04
+    restart: unless-stopped
+    # Privileged mode for systemd
+    privileged: true
+    # Interactive shell
+    stdin_open: true
+    tty: true
+    # Host networking
+    network_mode: "host"
+    # Mount volumes
+    volumes:
+      - ./data:/data
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    # Environment variables
+    environment:
+      - TZ=UTC
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 512M
+    # Install common tools and keep container running
+    command: >
+      bash -c "apt-get update && 
+      apt-get install -y \
+        curl \
+        wget \
+        git \
+        vim \
+        net-tools \
+        iputils-ping \
+        openssh-server \
+        sudo \
+        && service ssh start \
+        && useradd -m -s /bin/bash admin \
+        && echo 'admin:admin' | chpasswd \
+        && adduser admin sudo \
+        && tail -f /dev/null"
+
+volumes:
+  data:
+    driver: local
