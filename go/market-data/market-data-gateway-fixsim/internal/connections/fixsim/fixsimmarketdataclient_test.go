@@ -3,12 +3,13 @@ package fixsim
 import (
 	"context"
 	"fmt"
+	"testing"
+
 	"github.com/ettec/open-trading-platform/go/market-data/market-data-gateway-fixsim/internal/fix/marketdata"
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/connectivity"
 	"google.golang.org/grpc/metadata"
-	"testing"
 )
 
 func TestMdIncRefreshesAreForwarded(t *testing.T) {

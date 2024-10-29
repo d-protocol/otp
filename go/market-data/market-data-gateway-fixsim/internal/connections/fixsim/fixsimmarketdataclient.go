@@ -2,11 +2,12 @@ package fixsim
 
 import (
 	"context"
+	"log/slog"
+
 	"github.com/ettec/open-trading-platform/go/market-data/market-data-gateway-fixsim/internal/fix/common"
 	"github.com/ettec/open-trading-platform/go/market-data/market-data-gateway-fixsim/internal/fix/marketdata"
 	"google.golang.org/grpc/connectivity"
 	"google.golang.org/grpc/metadata"
-	"log/slog"
 )
 
 type fixSimMarketDataClient struct {

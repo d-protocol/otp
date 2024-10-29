@@ -23,7 +23,7 @@ The platform consists of a number of kubernetes managed services that are common
 
 
 
-The technologies and languages utilised by the platform are detailed further in the [architecture overview](#architectureoverview).  The aim and guiding principles behind the platform are outlined below.  To get an out of the box configuration of the platform running with which to interact see [here](https://github.com/ettec/open-trading-platform/blob/master/install/README.md) for the simple installation guide.
+The technologies and languages utilised by the platform are detailed further in the [architecture overview](#architectureoverview).  The aim and guiding principles behind the platform are outlined below.  To get an out of the box configuration of the platform running with which to interact see [here](https://github.com/d-protocol/otp/blob/master/install/README.md) for the simple installation guide.
 
 A common choice typically faced by companies with demanding trading execution requirements  is between choosing a vendor solution or building a bespoke solution.  The vendor platform option usually lacks flexibility and ends up costing materially more than initially allowed for once the costs of running and customising the platform are considered.  The bespoke solution is highly flexible but has a large upfront development cost and can have a higher ongoing maintenance cost (though this is not necessarily the case as platform specialists are usually required to modify and maintain the vendor solution). 
 
@@ -77,33 +77,33 @@ The client is a single page web application written in Typescript using the Reac
 
 Below is a list of links to the  source route and README file of each platform service that further elaborates upon the details of the service.  Note, a basic familiarity with Kubernetes will be beneficial to help with understanding some of the terminology used in the README files.
 
-[authorization-service](https://github.com/ettec/open-trading-platform/blob/master/go/authorization-service)
+[authorization-service](https://github.com/d-protocol/otp/blob/master/go/authorization-service)
 
-[client-config-service](https://github.com/ettec/open-trading-platform/blob/master/go/client-config-service)
+[client-config-service](https://github.com/d-protocol/otp/blob/master/go/client-config-service)
 
-[fix-market-simulator](https://github.com/ettec/open-trading-platform/blob/master/java/fixmarketsimulator)
+[fix-market-simulator](https://github.com/d-protocol/otp/blob/master/java/fixmarketsimulator)
 
-[fix-sim-execution-venue](https://github.com/ettec/open-trading-platform/blob/master/go/execution-venues/fix-sim-execution-venue)
+[fix-sim-execution-venue](https://github.com/d-protocol/otp/blob/master/go/execution-venues/fix-sim-execution-venue)
 
-[market-data-gateway-fixsim](https://github.com/ettec/open-trading-platform/blob/master/go/market-data/market-data-gateway-fixsim)
+[market-data-gateway-fixsim](https://github.com/d-protocol/otp/blob/master/go/market-data/market-data-gateway-fixsim)
 
-[market-data-service](https://github.com/ettec/open-trading-platform/blob/master/go/market-data/market-data-service)
+[market-data-service](https://github.com/d-protocol/otp/blob/master/go/market-data/market-data-service)
 
-[opentp-client](https://github.com/ettec/open-trading-platform/blob/master/react/opentp-client)
+[opentp-client](https://github.com/d-protocol/otp/blob/master/react/opentp-client)
 
-[order-data-service](https://github.com/ettec/open-trading-platform/blob/master/go/order-data-service)
+[order-data-service](https://github.com/d-protocol/otp/blob/master/go/order-data-service)
 
-[order-monitor](https://github.com/ettec/open-trading-platform/blob/master/go/order-monitor)
+[order-monitor](https://github.com/d-protocol/otp/blob/master/go/order-monitor)
 
-[order-router](https://github.com/ettec/open-trading-platform/blob/master/go/execution-venues/order-router)
+[order-router](https://github.com/d-protocol/otp/blob/master/go/execution-venues/order-router)
 
-[quote-aggregator](https://github.com/ettec/open-trading-platform/tree/master/go/market-data/quote-aggregator)
+[quote-aggregator](https://github.com/d-protocol/otp/tree/master/go/market-data/quote-aggregator)
 
-[smart-router](https://github.com/ettec/open-trading-platform/tree/master/go/execution-venues/smart-router)
+[smart-router](https://github.com/d-protocol/otp/tree/master/go/execution-venues/smart-router)
 
-[static-data-service](https://github.com/ettec/open-trading-platform/blob/master/go/static-data-service)
+[static-data-service](https://github.com/d-protocol/otp/blob/master/go/static-data-service)
 
-[vwap-strategy](https://github.com/ettec/open-trading-platform/blob/master/go/execution-venues/vwap-strategy)
+[vwap-strategy](https://github.com/d-protocol/otp/blob/master/go/execution-venues/vwap-strategy)
 
 ## where could it be useful?  <a name="wherecoulditbeuseful"></a>
 

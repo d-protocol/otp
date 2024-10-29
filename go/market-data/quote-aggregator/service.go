@@ -2,15 +2,6 @@ package main
 
 import (
 	"context"
-	"github.com/ettec/open-trading-platform/go/market-data/quote-aggregator/quoteaggregator"
-	"github.com/ettec/otp-common/api/marketdatasource"
-	"github.com/ettec/otp-common/bootstrap"
-	"github.com/ettec/otp-common/k8s"
-	"github.com/ettec/otp-common/marketdata"
-	"github.com/ettec/otp-common/staticdata"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/reflection"
 	"log"
 	"log/slog"
 	"net"
@@ -20,6 +11,16 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/ettec/open-trading-platform/go/market-data/quote-aggregator/quoteaggregator"
+	"github.com/ettec/otp-common/api/marketdatasource"
+	"github.com/ettec/otp-common/bootstrap"
+	"github.com/ettec/otp-common/k8s"
+	"github.com/ettec/otp-common/marketdata"
+	"github.com/ettec/otp-common/staticdata"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 func main() {

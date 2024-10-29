@@ -3,17 +3,19 @@ package fixsim
 import (
 	"context"
 	"fmt"
+
 	"github.com/ettec/otp-common/staticdata"
 	"github.com/golang/protobuf/proto"
 	"github.com/stretchr/testify/assert"
+
+	"reflect"
+	"strconv"
+	"testing"
 
 	"github.com/ettec/open-trading-platform/go/market-data/market-data-gateway-fixsim/internal/fix/common"
 	"github.com/ettec/open-trading-platform/go/market-data/market-data-gateway-fixsim/internal/fix/fix"
 	md "github.com/ettec/open-trading-platform/go/market-data/market-data-gateway-fixsim/internal/fix/marketdata"
 	"github.com/ettec/otp-common/model"
-	"reflect"
-	"strconv"
-	"testing"
 )
 
 func Test_QuoteClone(t *testing.T) {

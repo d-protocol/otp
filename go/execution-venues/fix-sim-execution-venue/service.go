@@ -3,27 +3,29 @@ package main
 import (
 	"context"
 	"fmt"
+	"log/slog"
+	"os/signal"
+	"syscall"
+
 	"github.com/ettec/open-trading-platform/go/execution-venues/fix-sim-execution-venue/internal/executionvenue"
 	common "github.com/ettec/otp-common"
 	api "github.com/ettec/otp-common/api/executionvenue"
 	"github.com/ettec/otp-common/ordermanagement"
 	"github.com/ettec/otp-common/orderstore"
 	"github.com/ettec/otp-common/staticdata"
-	"log/slog"
-	"os/signal"
-	"syscall"
 
 	"github.com/ettec/otp-common/bootstrap"
 
 	"github.com/ettec/open-trading-platform/go/execution-venues/fix-sim-execution-venue/internal/fixgateway"
 
-	"github.com/quickfixgo/quickfix"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/reflection"
 	"log"
 	"net"
 	"os"
 	"strings"
+
+	"github.com/quickfixgo/quickfix"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 func main() {

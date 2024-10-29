@@ -4,14 +4,6 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	api "github.com/ettec/open-trading-platform/go/static-data-service/api/staticdataservice"
-	"github.com/ettec/otp-common/bootstrap"
-	"github.com/ettec/otp-common/model"
-	_ "github.com/lib/pq"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/reflection"
-	"google.golang.org/grpc/status"
 	"log"
 	"log/slog"
 	"net"
@@ -20,6 +12,15 @@ import (
 	"strconv"
 	"strings"
 	"syscall"
+
+	api "github.com/ettec/open-trading-platform/go/static-data-service/api/staticdataservice"
+	"github.com/ettec/otp-common/bootstrap"
+	"github.com/ettec/otp-common/model"
+	_ "github.com/lib/pq"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/reflection"
+	"google.golang.org/grpc/status"
 )
 
 type service struct {

@@ -3,11 +3,12 @@ package fixsim
 import (
 	"context"
 	"fmt"
+	"log/slog"
+
 	"github.com/ettec/open-trading-platform/go/market-data/market-data-gateway-fixsim/internal/fix/marketdata"
 	"github.com/ettec/otp-common/model"
 	"github.com/ettec/otp-common/staticdata"
 	"github.com/golang/protobuf/proto"
-	"log/slog"
 )
 
 type GetListingFn func(ctx context.Context, listingId int32, resultChan chan<- staticdata.ListingResult)

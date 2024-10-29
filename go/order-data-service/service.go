@@ -4,15 +4,6 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	api "github.com/ettec/open-trading-platform/go/order-data-service/api/orderdataservice"
-	"github.com/ettec/otp-common"
-	"github.com/ettec/otp-common/bootstrap"
-	"github.com/ettec/otp-common/model"
-	"github.com/ettec/otp-common/orderstore"
-	"github.com/golang/protobuf/proto"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/metadata"
-	"google.golang.org/grpc/reflection"
 	"log"
 	"log/slog"
 	"net"
@@ -22,6 +13,16 @@ import (
 	"sync"
 	"syscall"
 	"time"
+
+	api "github.com/ettec/open-trading-platform/go/order-data-service/api/orderdataservice"
+	common "github.com/ettec/otp-common"
+	"github.com/ettec/otp-common/bootstrap"
+	"github.com/ettec/otp-common/model"
+	"github.com/ettec/otp-common/orderstore"
+	"github.com/golang/protobuf/proto"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/metadata"
+	"google.golang.org/grpc/reflection"
 )
 
 type orderAndWriteTime struct {

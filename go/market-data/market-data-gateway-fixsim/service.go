@@ -3,12 +3,19 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/ettec/otp-common/api/marketdatasource"
-	"github.com/ettec/otp-common/bootstrap"
 	"log/slog"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/ettec/otp-common/api/marketdatasource"
+	"github.com/ettec/otp-common/bootstrap"
+
+	"log"
+	"net"
+	"net/http"
+	_ "net/http/pprof"
+	"time"
 
 	"github.com/ettec/open-trading-platform/go/market-data/market-data-gateway-fixsim/internal/connections/fixsim"
 	md "github.com/ettec/otp-common/marketdata"
@@ -16,11 +23,6 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
-	"log"
-	"net"
-	"net/http"
-	_ "net/http/pprof"
-	"time"
 )
 
 func newService(ctx context.Context, id string, fixSimAddress string, maxReconnectInterval time.Duration,
