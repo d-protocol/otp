@@ -122,6 +122,3 @@ kubectl run opentp-postgresql-client --rm --tty -i --restart='Never' --namespace
 
 kubectl port-forward --namespace postgresql svc/opentp-postgresql 5432:5432 &
 
-datadog
-
-DD_API_KEY=086e6973d982ef05eaafb377a2fe10a5 DD_SITE="us5.datadoghq.com" bash -c "$(curl -L https://install.datadoghq.com/scripts/install_script_agent7.sh)"
