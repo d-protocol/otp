@@ -107,8 +107,6 @@ kubectl config current-context
 
 export POSTGRES_PASSWORD=$(kubectl get secret --namespace postgresql opentp-postgresql -o jsonpath="{.data.postgres-password}" | base64 -d)
 
-JZq1WYx8uh
-
 kubectl run opentp-postgresql-client --rm --tty -i --restart='Never' --namespace postgresql --image docker.io/bitnami/postgresql:16.0.0-debian-11-r13 --env="PGPASSWORD=$POSTGRES_PASSWORD" --command -- psql --host opentp-postgresql -U postgres -d postgres -p 5432
 
 delete the pod 
