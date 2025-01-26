@@ -1,4 +1,43 @@
-./install/install.sh -v 1.1.0 -m
+DOCKER COMPOSE
+
+# CLEANING UP
+docker compose down; docker system prune -f; docker volume prune -f
+
+
+
+# STARTING THE CLUSTER
+
+docker compose up -d; docker compose logs -f
+
+docker exec -it microk8s bash
+
+# Inside the container:
+
+mkdir -p /snap/bin; mkdir -p /usr/local/bin
+
+apt-get update && apt-get install -y snapd sudo curl wget git vim
+
+snap download core --channel=stable
+snap download microk8s --channel=stable
+rm *.assert
+
+systemctl start snapd; 
+systemctl enable snapd;
+snap wait system seed.loaded
+
+sudo systemctl restart snapd
+sudo snap refresh core
+
+snap install microk8s --classic --channel=1.27/stable
+
+microk8s status
+which microk8s.kubectl
+which microk8s.helm3
+
+
+========================================
+
+./install/install.sh -v 1.1.0 -m -l
 
 Installing Open Trading Platform version 1.1.0
 installing into MicroK8s cluster
